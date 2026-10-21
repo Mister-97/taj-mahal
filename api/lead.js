@@ -38,6 +38,30 @@ async function sendEmail(lead) {
   if (!r.ok) throw new Error(`Resend ${r.status}: ${(await r.text()).slice(0, 300)}`);
 }
 
+async function sendConfirmation(lead) {
+  const key = process.env.RESEND_API_KEY;
+  const from = process.env.LEAD_FROM;
+  if (!key || !from) return;
+  const first = esc(lead.full_name.split(/\s+/)[0]);
+  const rows = [['Event type', lead.event_type], ['Event date', lead.event_date], ['Location', lead.location]].filter(([, v]) => v);
+  const html = `<div style="font-family:Arial,sans-serif;max-width:560px;color:#111">
+    <h2 style="margin:0 0 12px">We got your inquiry</h2>
+    <p>Hi ${first},</p>
+    <p>Thank you for reaching out to Taj Mahal. Your booking inquiry came through, and Taj's team will be in touch within 24 to 48 hours.</p>
+    ${rows.length ? `<p style="margin:16px 0 6px;color:#777">What you sent us</p>
+    <table cellpadding="6" style="border-collapse:collapse;width:100%">
+      ${rows.map(([k, v]) => `<tr><td style="color:#777;white-space:nowrap">${k}</td><td>${esc(v)}</td></tr>`).join('')}
+    </table>` : ''}
+    <p>If you need to add anything, just reply to this email.</p>
+    <p>Taj Mahal<br><span style="color:#777">Connect@iamtajmahal.com</span></p></div>`;
+  const r = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ from, to: [lead.email], reply_to: 'Connect@iamtajmahal.com', subject: 'We got your inquiry', html }),
+  });
+  if (!r.ok) throw new Error(`Resend ${r.status}: ${(await r.text()).slice(0, 300)}`);
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return res.status(405).json({ ok: false }); }
   const body = await readBody(req);
@@ -61,6 +85,9 @@ module.exports = async (req, res) => {
   } catch (e) { console.error('lead store failed:', e.message); }
 
   try { await sendEmail(lead); emailed = true; } catch (e) { console.error('lead email failed:', e.message); }
+
+  // confirmation to the sender; never blocks or fails the submission
+  try { await sendConfirmation(lead); } catch (e) { console.error('confirmation email failed:', e.message); }
 
   if (stored && emailed) {
     try { const sql = await db(); await sql`UPDATE leads SET emailed = true WHERE id = ${id}`; } catch (e) { /* non-fatal */ }
