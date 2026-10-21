@@ -18,15 +18,16 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Taj Mahal | Transformational Leader, Speaker &amp; Identity Architect">
 <meta property="og:description" content="Helping leaders enter bigger rooms without leaving themselves behind. Book Taj Mahal for keynotes, workshops and leadership training.">
-<meta property="og:url" content="https://iamtajmahal.com/">
-<meta property="og:image" content="https://iamtajmahal.com/og-image.jpg">
+<meta property="og:url" content="https://taj-mahal-one.vercel.app/">
+<meta property="og:image" content="https://taj-mahal-one.vercel.app/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:alt" content="Taj Mahal, Transformational Leader">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Taj Mahal | Transformational Leader, Speaker &amp; Identity Architect">
 <meta name="twitter:description" content="Helping leaders enter bigger rooms without leaving themselves behind.">
-<meta name="twitter:image" content="https://iamtajmahal.com/og-image.jpg">
+<meta name="twitter:image" content="https://taj-mahal-one.vercel.app/og-image.jpg">
 <meta name="theme-color" content="#060606">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://iamtajmahal.com/#website","url":"https://iamtajmahal.com/","name":"Taj Mahal","description":"Official website of Taj Mahal, transformational leader, identity architect and speaker.","inLanguage":"en-US","publisher":{"@id":"https://iamtajmahal.com/#person"}},{"@type":"Person","@id":"https://iamtajmahal.com/#person","name":"Taj Mahal","url":"https://iamtajmahal.com/","image":"https://iamtajmahal.com/img/taj-mahal-transformational-leader-portrait.webp","email":"Connect@iamtajmahal.com","jobTitle":"Transformational Leader, Identity Architect and Speaker","description":"Taj Mahal is an identity architect and transformational leader known for helping people enter bigger rooms without leaving themselves behind, with more than 20 years of leadership experience across independent operations, workforce development, organizational leadership and community transformation.","disambiguatingDescription":"Tampa Bay based speaker and transformational leader, not the monument in India or the blues musician of the same name.","workLocation":{"@type":"Place","name":"Tampa Bay, Florida"},"knowsAbout":["Leadership development","Transformational leadership","Keynote speaking","Organizational leadership","Workforce development","Identity and personal branding","Independent contractor team building"],"award":["Presidential Lifetime Achievement Award","Tampa Bay's Top 10 People to Know"],"memberOf":{"@type":"OrganizationRole","roleName":"Executive Board Member","memberOf":{"@type":"Organization","name":"National African American Insurance Association, Tampa Bay"}},"sameAs":["https://www.linkedin.com/in/taj-mahal-0b87702b5/","https://www.instagram.com/iamtajmahal/","https://www.facebook.com/share/1D3E99Nir4/","https://www.tiktok.com/@iamtajmahal"]},{"@type":"ProfessionalService","@id":"https://iamtajmahal.com/#service","name":"Taj Mahal Speaking and Leadership Development","url":"https://iamtajmahal.com/","provider":{"@id":"https://iamtajmahal.com/#person"},"areaServed":"United States","email":"Connect@iamtajmahal.com","description":"Keynote speaking, corporate workshops, leadership training, panel moderation and private consulting for executives, universities, nonprofits and corporate teams.","serviceType":["Keynote speaking","Corporate workshops","Leadership training","Panel moderation","Private consulting"]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2785,12 +2786,12 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeReelModa
     window.addEventListener('resize',()=>{ resizeCanvas(); spawnParticles(); });
   }
 
-  // ── Mobile autoplay (≤768px only): one testimonial every 5s, 700ms glide; any manual input (touch, drag, wheel) takes over for good and settles on a card ──
+  // ── Mobile autoplay (≤768px only): slow continuous drift to the left; any manual input (touch, drag, wheel) takes over for good and settles on a card ──
   (function(){
     const mq = window.matchMedia && window.matchMedia('(max-width:768px)');
     const rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
     if(!mq || !mq.matches) return;                       // desktop: nothing added
-    const INTERVAL = 5000, DURATION = 700;
+    const INTERVAL = 0, DURATION = 700;
     // cubic-bezier(0.4, 0, 0.2, 1)
     const ease = (function(p1x,p1y,p2x,p2y){
       const cx=3*p1x, bx=3*(p2x-p1x)-cx, ax=1-cx-bx, cy=3*p1y, by=3*(p2y-p1y)-cy, ay=1-cy-by;
@@ -2846,12 +2847,14 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeReelModa
     document.addEventListener('visibilitychange', () => {
       if(document.hidden) stopTween(); else nextAt = performance.now() + INTERVAL;
     });
-    setInterval(() => {
-      if(manual || !active() || !inView || document.hidden || tween) return;
-      if(performance.now() < nextAt) return;
-      glideTo(centerPos(nearest() + 1));
-      nextAt = performance.now() + DURATION + INTERVAL;
-    }, 200);
+    // continuous slow drift to the left while untouched; any manual input ends it for good
+    const SPEED = 38;                                    // px per second
+    let last = performance.now();
+    (function drift(now){
+      const dt = Math.min(64, now - last); last = now;
+      if(!manual && active() && inView && !document.hidden && !tween) pos += SPEED * dt / 1000;
+      requestAnimationFrame(drift);
+    })(last);
   })();
 
   window.addEventListener('resize', ()=>{ calcSetWidth(); });
