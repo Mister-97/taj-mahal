@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Helping leaders enter bigger rooms without leaving themselves behind.">
 <meta name="twitter:image" content="https://taj-mahal-one.vercel.app/og-image.jpg">
 <meta name="theme-color" content="#060606">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://iamtajmahal.com/#website","url":"https://iamtajmahal.com/","name":"Taj Mahal","description":"Official website of Taj Mahal, transformational leader, identity architect and speaker.","inLanguage":"en-US","publisher":{"@id":"https://iamtajmahal.com/#person"}},{"@type":"Person","@id":"https://iamtajmahal.com/#person","name":"Taj Mahal","url":"https://iamtajmahal.com/","image":"https://iamtajmahal.com/img/taj-mahal-transformational-leader-portrait.webp","email":"Connect@iamtajmahal.com","jobTitle":"Transformational Leader, Identity Architect and Speaker","description":"Taj Mahal is an identity architect and transformational leader known for helping people enter bigger rooms without leaving themselves behind, with more than 20 years of leadership experience across independent operations, workforce development, organizational leadership and community transformation.","disambiguatingDescription":"Tampa Bay based speaker and transformational leader, not the monument in India or the blues musician of the same name.","workLocation":{"@type":"Place","name":"Tampa Bay, Florida"},"knowsAbout":["Leadership development","Transformational leadership","Keynote speaking","Organizational leadership","Workforce development","Identity and personal branding","Independent contractor team building"],"award":["Presidential Lifetime Achievement Award","Tampa Bay's Top 10 People to Know"],"memberOf":{"@type":"OrganizationRole","roleName":"Executive Board Member","memberOf":{"@type":"Organization","name":"National African American Insurance Association, Tampa Bay"}},"sameAs":["https://www.linkedin.com/in/taj-mahal-0b87702b5/","https://www.instagram.com/iamtajmahal/","https://www.facebook.com/share/1D3E99Nir4/","https://www.tiktok.com/@iamtajmahal"]},{"@type":"ProfessionalService","@id":"https://iamtajmahal.com/#service","name":"Taj Mahal Speaking and Leadership Development","url":"https://iamtajmahal.com/","provider":{"@id":"https://iamtajmahal.com/#person"},"areaServed":"United States","email":"Connect@iamtajmahal.com","description":"Keynote speaking, corporate workshops, leadership training, panel moderation and private consulting for executives, universities, nonprofits and corporate teams.","serviceType":["Keynote speaking","Corporate workshops","Leadership training","Panel moderation","Private consulting"]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://iamtajmahal.com/#website","url":"https://iamtajmahal.com/","name":"Taj Mahal","description":"Official website of Taj Mahal, transformational leader, identity architect and speaker.","inLanguage":"en-US","publisher":{"@id":"https://iamtajmahal.com/#person"}},{"@type":"Person","@id":"https://iamtajmahal.com/#person","name":"Taj Mahal","url":"https://iamtajmahal.com/","image":"https://iamtajmahal.com/img/taj-mahal-transformational-leader-portrait.webp","email":"Connect@iamtajmahal.com","jobTitle":"Transformational Leader, Identity Architect and Speaker","description":"Taj Mahal is an identity architect and transformational leader known for helping people enter bigger rooms without leaving themselves behind, with more than 20 years of leadership experience across independent operations, workforce development, organizational leadership and community transformation.","disambiguatingDescription":"Tampa Bay based speaker and transformational leader, not the monument in India or the blues musician of the same name.","workLocation":{"@type":"Place","name":"Tampa Bay, Florida"},"knowsAbout":["Leadership development","Transformational leadership","Keynote speaking","Organizational leadership","Workforce development","Identity and personal branding","Independent contractor team building"],"award":["Presidential Lifetime Achievement Award","Tampa Bay's Top 10 People to Know"],"memberOf":{"@type":"OrganizationRole","roleName":"Executive Board Member","memberOf":{"@type":"Organization","name":"National African American Insurance Association, Tampa Bay"}},"sameAs":["https://www.linkedin.com/in/taj-mahal-0b87702b5/","https://www.instagram.com/iamtajmahal/","https://www.facebook.com/share/1D3E99Nir4/"]},{"@type":"ProfessionalService","@id":"https://iamtajmahal.com/#service","name":"Taj Mahal Speaking and Leadership Development","url":"https://iamtajmahal.com/","provider":{"@id":"https://iamtajmahal.com/#person"},"areaServed":"United States","email":"Connect@iamtajmahal.com","description":"Keynote speaking, corporate workshops, leadership training, panel moderation and private consulting for executives, universities, nonprofits and corporate teams.","serviceType":["Keynote speaking","Corporate workshops","Leadership training","Panel moderation","Private consulting"]},{"@type":"VideoObject","@id":"https://iamtajmahal.com/#video","name":"Taj Mahal: Experience the Impact","description":"A short film of Taj Mahal, transformational leader and speaker, in his own words.","thumbnailUrl":"https://iamtajmahal.com/video/taj-impact-poster.jpg","contentUrl":"https://iamtajmahal.com/video/taj-impact.mp4","uploadDate":"2026-10-21","duration":"PT40S","width":720,"height":1280,"author":{"@id":"https://iamtajmahal.com/#person"}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800;900&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -492,24 +492,6 @@ body::before{
 }
 
 
-/* ─── YOUTUBE PLAYER ─────────────────────── */
-#yt-player-wrap{
-  position:absolute;inset:0;z-index:0;overflow:hidden;
-  pointer-events:none;
-}
-#yt-player{
-  position:absolute;
-  top:50%;left:50%;
-  /* Short is 9:16 - scale to fill height, crop width */
-  height:180%;
-  width:calc(180% * 9/16);
-  min-width:100%;
-  transform:translate(-50%,-50%);
-}
-#yt-player iframe{
-  width:100%;height:100%;border:none;
-}
-
 /* ─── VIDEO ───────────────────────────────── */
 #video-section{
   position:relative;width:100%;background:var(--bk);
@@ -541,8 +523,8 @@ body::before{
   background:#000;
   box-shadow:0 0 0 1px rgba(201,168,76,.22),0 30px 80px rgba(0,0,0,.7);
 }
-.video-vertical iframe{
-  position:absolute;inset:0;width:100%;height:100%;border:none;display:block;
+.video-vertical video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;display:block;
 }
 @media(max-width:768px){
   #video-section{padding:64px 20px;}
@@ -1951,7 +1933,7 @@ footer{
 .mobile-eyebrow-bar{display:none;}
 /* MOBILE HERO VIDEO disabled: mobile hero shows the photo (see .hero-right in the 768px block). Markup + script kept, script returns early. */
 .hero-mobile-video{display:none;}
-/* ─── MOBILE IMPACT — stack text above the photo so the photo is no longer squeezed to a sliver ─── */
+/* ─── MOBILE IMPACT: stack text above the photo so the photo is no longer squeezed to a sliver ─── */
 @media(max-width:768px){
   #impact .impact-top{grid-template-columns:1fr;min-height:0;padding:48px 24px 0 !important}
   #impact .impact-inner{padding:0 0 28px}
@@ -2127,13 +2109,9 @@ footer{
   </div>
   <div class="video-stage reveal rd2">
     <div class="video-vertical">
-      <iframe id="yt-iframe"
-        src="https://www.youtube.com/embed/cGje89LYLlA?autoplay=1&mute=1&loop=1&playlist=cGje89LYLlA&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&enablejsapi=1"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
+      <video id="impactVideo" class="impact-video" poster="/video/taj-impact-poster.jpg" muted loop playsinline controls controlslist="nodownload" disablepictureinpicture preload="metadata" aria-label="Taj Mahal, Experience the Impact">
+        <source src="/video/taj-impact.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -2191,7 +2169,7 @@ footer{
   <div class="twall-rail-wrap" id="twallWrap">
     <div class="twall-rail" id="twallRail">
       <!-- Set A (sets B/C are cloned at runtime) -->
-      <div class="twall-card"><img src="/img/endorsement-dr-delatorro-mcneal-ii.webp" alt="Endorsement from Dr. Delatorro McNeal II, Hall of Fame Keynote Speaker (Top 1%), Wall Street Journal &amp; USA Today Bestselling Author: &quot;Taj Mahal is a Gentle Giant! He is a powerful communicator dedicated to shifting the consciousness of community and culture. His presence doesn't feel rehearsed or manufactured. You feel the conviction behind who he is, and his impact stays with people long after he leaves the room.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-cherdonna-epps-gardner.webp" alt="Endorsement from Cherdonna Epps-Gardner, MSW, SVP, Operations &amp; Technical Director, Northeast, Aon Risk Insurance Services; President, NAAIA Tampa Bay Chapter: &quot;Some people lead with words. Others lead through action, consistency, and intention. Taj Mahal embodies all three. What stands out most about Taj is his commitment to excellence, authenticity, and people. He approaches every opportunity with purpose, every challenge with strategy, and every interaction with intention. His ability to create clarity, inspire confidence, and move people toward growth is what leaves a lasting impression.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-lavour-boomman-sanders.webp" alt="Endorsement from LaVour &quot;Boomman&quot; Sanders, CEO of Authentic Empire, independent music executive behind multi-platinum successes and over 100 million records sold: &quot;Taj Mahal... the man, the myth, the legend. A man whose word carries real weight. When Taj says he's going to do something, consider it already done. The impact he makes speaks for itself. A lot of people talk it. Taj really lives it.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-dr-lauren-huff.webp" alt="Endorsement from Dr. Lauren N. Huff, PhD, CLC, Entrepreneur, author, award-winning nonprofit executive: &quot;Taj Mahal has a way of showing up that makes people believe real change is possible not only within themselves, but within the organizations and communities they serve. His authenticity isn't performative, and his conviction can't be manufactured. You don't just hear his story or his message... you feel it.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-sam-sparks.webp" alt="Endorsement from Sam Sparks, Serial entrepreneur, motivational speaker, philosopher and author, founder of The Brew Coffee Shop &amp; Podcast: &quot;My brother Taj Mahal is one of the few people I've encountered who truly understands identity beyond image. His ability to help people see themselves clearer, lead with intention, and move with purpose is rare. The impact he creates isn't surface level. It shifts how people think, lead, and show up in life and business. Solid man, solid leadership, and an even greater vision. Taj Mahal truly lives what he speaks.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-dr-christopher-king.webp" alt="Endorsement from Dr. Christopher King, CEO, The Gentlemen's Course, Inc.; President, United For Human Rights Florida: &quot;Taj Mahal is a force of nature. A man of integrity, wisdom, and undeniable presence. I've had the opportunity to watch him lead in rooms, on stages, and throughout the community, and one thing always remains the same... people leave different than they came. His impact goes far beyond the microphone and continues long after the moment is over.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-dr-anjali-queen-b-mcguire.webp" alt="Endorsement from Dr. Anjali &quot;Queen B&quot; McGuire, Award-winning media personality, 30+ years in broadcasting and entertainment, iHeartRadio's 106.5 &amp; 102.9 The Beat: &quot;A man's integrity is his greatest asset. Without it, he has nothing. Taj Mahal is a man of strong moral character and principle. He walks the walk and talks the talk. As Maya Angelou once said, 'People will forget what you said or did, but they will never forget how you made them feel.' Taj Mahal is a captivating orator whose messages resonate on a personal level, sparking reflection, connection, and lasting impact.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-sakeya-donaldson.webp" alt="Endorsement from Sakeya Donaldson, Founder of The Science of Beauty, STEM beauty pioneer: &quot;Taj Mahal has a way of teaching that reaches people beyond the surface. We walked the stage together receiving the Presidential Lifetime Achievement Award, and hearing Taj speak with that level of honesty, conviction, and purpose genuinely moved me to tears. Nothing about him feels rehearsed or forced. Taj doesn't just inspire people... he reminds them of their power.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-jose-visionary-vega.webp" alt="Endorsement from Jose &quot;Visionary&quot; Vega, Brand strategist, creative visionary, storyteller, purpose-driven leader: &quot;A brand isn't just aesthetic; it's a promise upheld through consistent execution. Taj Mahal doesn't rely on flash, he embodies purpose with precision. He stands out for his alignment of integrity and delivery. A strong brand is consistent action that matches its promise. Taj operates with clear purpose, and that's exactly why his brand earns trust naturally.&quot;" loading="lazy" draggable="false"></div>
+      <div class="twall-card"><img src="/img/endorsement-dr-delatorro-mcneal-ii-v2.webp" alt="Endorsement from Dr. Delatorro McNeal II, Hall of Fame Keynote Speaker (Top 1%), Wall Street Journal &amp; USA Today Bestselling Author: &quot;Taj Mahal is a Gentle Giant! He is a powerful communicator dedicated to shifting the consciousness of community and culture. His presence doesn't feel rehearsed or manufactured. You feel the conviction behind who he is, and his impact stays with people long after he leaves the room.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-cherdonna-epps-gardner.webp" alt="Endorsement from Cherdonna Epps-Gardner, MSW, SVP, Operations &amp; Technical Director, Northeast, Aon Risk Insurance Services; President, NAAIA Tampa Bay Chapter: &quot;Some people lead with words. Others lead through action, consistency, and intention. Taj Mahal embodies all three. What stands out most about Taj is his commitment to excellence, authenticity, and people. He approaches every opportunity with purpose, every challenge with strategy, and every interaction with intention. His ability to create clarity, inspire confidence, and move people toward growth is what leaves a lasting impression.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-lavour-boomman-sanders.webp" alt="Endorsement from LaVour &quot;Boomman&quot; Sanders, CEO of Authentic Empire, independent music executive behind multi-platinum successes and over 100 million records sold: &quot;Taj Mahal... the man, the myth, the legend. A man whose word carries real weight. When Taj says he's going to do something, consider it already done. The impact he makes speaks for itself. A lot of people talk it. Taj really lives it.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-dr-lauren-huff.webp" alt="Endorsement from Dr. Lauren N. Huff, PhD, CLC, Entrepreneur, author, award-winning nonprofit executive: &quot;Taj Mahal has a way of showing up that makes people believe real change is possible not only within themselves, but within the organizations and communities they serve. His authenticity isn't performative, and his conviction can't be manufactured. You don't just hear his story or his message... you feel it.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-sam-sparks.webp" alt="Endorsement from Sam Sparks, Serial entrepreneur, motivational speaker, philosopher and author, founder of The Brew Coffee Shop &amp; Podcast: &quot;My brother Taj Mahal is one of the few people I've encountered who truly understands identity beyond image. His ability to help people see themselves clearer, lead with intention, and move with purpose is rare. The impact he creates isn't surface level. It shifts how people think, lead, and show up in life and business. Solid man, solid leadership, and an even greater vision. Taj Mahal truly lives what he speaks.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-dr-christopher-king.webp" alt="Endorsement from Dr. Christopher King, CEO, The Gentlemen's Course, Inc.; President, United For Human Rights Florida: &quot;Taj Mahal is a force of nature. A man of integrity, wisdom, and undeniable presence. I've had the opportunity to watch him lead in rooms, on stages, and throughout the community, and one thing always remains the same... people leave different than they came. His impact goes far beyond the microphone and continues long after the moment is over.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-dr-anjali-queen-b-mcguire.webp" alt="Endorsement from Dr. Anjali &quot;Queen B&quot; McGuire, Award-winning media personality, 30+ years in broadcasting and entertainment, iHeartRadio's 106.5 &amp; 102.9 The Beat: &quot;A man's integrity is his greatest asset. Without it, he has nothing. Taj Mahal is a man of strong moral character and principle. He walks the walk and talks the talk. As Maya Angelou once said, 'People will forget what you said or did, but they will never forget how you made them feel.' Taj Mahal is a captivating orator whose messages resonate on a personal level, sparking reflection, connection, and lasting impact.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-sakeya-donaldson.webp" alt="Endorsement from Sakeya Donaldson, Founder of The Science of Beauty, STEM beauty pioneer: &quot;Taj Mahal has a way of teaching that reaches people beyond the surface. We walked the stage together receiving the Presidential Lifetime Achievement Award, and hearing Taj speak with that level of honesty, conviction, and purpose genuinely moved me to tears. Nothing about him feels rehearsed or forced. Taj doesn't just inspire people... he reminds them of their power.&quot;" loading="lazy" draggable="false"></div><div class="twall-card"><img src="/img/endorsement-jose-visionary-vega-v2.webp" alt="Endorsement from Jose &quot;Visionary Vega&quot; Vega, Founder &amp; Branding Strategist of eleven agency, Brand Genetics Expert, Stellar Award for Best Branding Agency in Tampa: &quot;What stands out about Taj Mahal is the alignment between his story, integrity, and delivery. A brand isn't just aesthetics. It's a promise upheld through consistent execution. Taj doesn't rely on flash to establish his presence. He moves with purpose, delivers with precision, and earns trust because who he is matches what he represents.&quot;" loading="lazy" draggable="false"></div>
     </div>
   </div>
 
@@ -2238,15 +2216,6 @@ footer{
           </div>
           <div class="si-info">
             <span class="si-platform">Facebook</span>
-            <span class="si-handle">I Am Taj Mahal</span>
-          </div>
-        </a>
-        <a href="https://www.tiktok.com/@iamtajmahal" target="_blank" rel="noopener" class="social-item">
-          <div class="si-icon">
-            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.18 8.18 0 0 0 4.78 1.54V6.78a4.85 4.85 0 0 1-1.02-.09z"/></svg>
-          </div>
-          <div class="si-info">
-            <span class="si-platform">TikTok</span>
             <span class="si-handle">I Am Taj Mahal</span>
           </div>
         </a>
@@ -2511,9 +2480,6 @@ footer{
       <a href="https://www.facebook.com/share/1D3E99Nir4/" target="_blank" rel="noopener" aria-label="Facebook">
         <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </a>
-      <a href="https://www.tiktok.com/@iamtajmahal" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.33 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.69a8.18 8.18 0 0 0 4.78 1.54V6.78a4.85 4.85 0 0 1-1.02-.09z"/></svg>
-      </a>
     </div>
   </div>
 </footer>
@@ -2567,16 +2533,20 @@ const co=new IntersectionObserver(entries=>{
 },{threshold:.2});
 document.querySelectorAll('.stat-num[data-target]').forEach(el=>co.observe(el));
 
-/* === YOUTUBE PLAYER - auto-unmute on first interaction === */
+/* === IMPACT VIDEO - plays muted while on screen, unmutes on the first click/tap/key === */
 (function(){
+  var v=document.getElementById('impactVideo');
+  if(!v) return;
+  v.muted=true;
+  function play(){ var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) play(); else v.pause(); }); },{threshold:.35}).observe(v);
+  } else play();
   function unmute(){
-    const iframe = document.getElementById('yt-iframe');
-    if(!iframe) return;
-    iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}','*');
-    iframe.contentWindow.postMessage('{"event":"command","func":"setVolume","args":[100]}','*');
-    ['click','scroll','touchstart','keydown'].forEach(e=>document.removeEventListener(e,unmute));
+    v.muted=false; v.volume=1;
+    ['click','touchstart','keydown'].forEach(function(ev){document.removeEventListener(ev,unmute);});
   }
-  ['click','scroll','touchstart','keydown'].forEach(e=>document.addEventListener(e,unmute,{once:true,passive:true}));
+  ['click','touchstart','keydown'].forEach(function(ev){document.addEventListener(ev,unmute,{once:true,passive:true});});
 })();
 
 
@@ -3494,38 +3464,6 @@ if(scrollCue){
     })
     .then(function(){ btn.disabled = false; btn.textContent = label; });
   });
-})();
-</script>
-<script>
-/* === MOBILE HERO VIDEO - reuses the site video (YouTube cGje89LYLlA), muted, inline, mobile only === */
-(function(){
-  return; /* mobile hero video disabled: photo only */
-  var box=document.getElementById('heroMobileVideo');
-  if(!box||!window.matchMedia) return;
-  if(!window.matchMedia('(max-width:768px)').matches) return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var VID='cGje89LYLlA', holder=document.createElement('div');
-  box.appendChild(holder);
-  function build(){
-    new YT.Player(holder,{
-      videoId:VID,
-      playerVars:{autoplay:1,mute:1,playsinline:1,loop:1,playlist:VID,controls:0,disablekb:1,fs:0,rel:0,modestbranding:1,iv_load_policy:3,origin:location.origin},
-      events:{
-        onReady:function(e){
-          var f=e.target.getIframe();
-          f.setAttribute('tabindex','-1');f.setAttribute('title','Taj Mahal');
-          f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
-          e.target.mute();e.target.playVideo();
-        },
-        onStateChange:function(e){ if(e.data===1) box.classList.add('is-playing'); }
-      }
-    });
-  }
-  if(window.YT&&window.YT.Player){build();return;}
-  var prev=window.onYouTubeIframeAPIReady;
-  window.onYouTubeIframeAPIReady=function(){ if(typeof prev==='function') prev(); build(); };
-  var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';t.async=true;
-  document.head.appendChild(t);
 })();
 </script>
 </body>

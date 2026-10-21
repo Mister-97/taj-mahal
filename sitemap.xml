@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://iamtajmahal.com/</loc>
     <lastmod>2026-10-21</lastmod>
@@ -8,5 +8,6 @@
     <image:image><image:loc>https://iamtajmahal.com/img/taj-mahal-transformational-leader-portrait.webp</image:loc><image:title>Taj Mahal, transformational leader and identity architect</image:title></image:image>
     <image:image><image:loc>https://iamtajmahal.com/img/taj-mahal-keynote-speaker-hero.jpg</image:loc><image:title>Taj Mahal, keynote speaker</image:title></image:image>
     <image:image><image:loc>https://iamtajmahal.com/img/taj-mahal-speaking-to-students.webp</image:loc><image:title>Taj Mahal speaking to students</image:title></image:image>
+    <video:video><video:thumbnail_loc>https://iamtajmahal.com/video/taj-impact-poster.jpg</video:thumbnail_loc><video:title>Taj Mahal: Experience the Impact</video:title><video:description>A short film of Taj Mahal, transformational leader and speaker, in his own words.</video:description><video:content_loc>https://iamtajmahal.com/video/taj-impact.mp4</video:content_loc><video:duration>41</video:duration></video:video>
   </url>
 </urlset>
