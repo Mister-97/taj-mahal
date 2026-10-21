@@ -98,6 +98,7 @@ header.bar .brand span{font-family:'Montserrat',sans-serif;font-size:10px;letter
     <div class="brand">TAJ <b>MAHAL</b><span>Leads</span></div>
     <div style="display:flex;gap:10px">
       <button class="btn ghost small" id="csv">Export CSV</button>
+      <button class="btn ghost small" id="chpw">Password</button>
       <button class="btn ghost small" id="out">Sign out</button>
     </div>
   </header>
@@ -191,6 +192,26 @@ header.bar .brand span{font-family:'Montserrat',sans-serif;font-size:10px;letter
   $('list').addEventListener('click',function(e){var b=e.target.closest('.row');if(b) openLead(Number(b.dataset.id))});
   $('q').addEventListener('input',function(e){term=e.target.value;render()});
   $('csv').onclick=csv;
+  $('chpw').onclick=function(){
+    $('drawerMount').innerHTML='<div class="shade" id="shade"></div><aside class="drawer"><button class="x" id="dx" aria-label="Close">&times;</button>'+
+      '<p class="sub" style="margin:0">Account</p><h2>Change password</h2>'+
+      '<form id="pwForm"><label for="pc">Current password</label><input class="field" type="password" id="pc" autocomplete="current-password" required>'+
+      '<label for="pn">New password (10+ characters)</label><input class="field" type="password" id="pn" autocomplete="new-password" minlength="10" required>'+
+      '<label for="pn2">Confirm new password</label><input class="field" type="password" id="pn2" autocomplete="new-password" minlength="10" required>'+
+      '<p class="err" id="perr"></p><div class="acts"><button class="btn" id="psave" type="submit">Update password</button></div></form></aside>';
+    var close=function(){$('drawerMount').innerHTML=''};
+    $('shade').onclick=close;$('dx').onclick=close;
+    $('pwForm').onsubmit=function(e){
+      e.preventDefault();var err=$('perr');err.style.color='';err.textContent='';
+      if($('pn').value!==$('pn2').value){err.textContent='The new passwords do not match.';return}
+      var b=$('psave');b.disabled=true;b.textContent='Saving';
+      fetch('/api/password',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify({current:$('pc').value,next:$('pn').value})})
+        .then(function(r){return r.json()}).then(function(j){
+          if(!j.ok){err.textContent=j.error||'Could not update the password.';b.disabled=false;b.textContent='Update password';return}
+          err.style.color='var(--grn)';err.textContent='Password updated. Use it next time you sign in.';b.textContent='Done';setTimeout(close,1800);
+        }).catch(function(){err.textContent='Could not reach the server.';b.disabled=false;b.textContent='Update password'});
+    };
+  };
   $('out').onclick=function(){fetch('/api/login',{method:'DELETE',credentials:'same-origin'}).then(function(){leads=[];show(false)})};
   $('loginForm').addEventListener('submit',function(e){
     e.preventDefault();$('loginErr').textContent='';
