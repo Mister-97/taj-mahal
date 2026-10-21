@@ -1,0 +1,67 @@
+# Taj Mahal: search and AI crawlers are welcome on the public site.
+User-agent: *
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /team/
+Disallow: /api/
+
+Sitemap: https://iamtajmahal.com/sitemap.xml
