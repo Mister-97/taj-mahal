@@ -1,0 +1,9 @@
+{
+  "name": "taj-mahal-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Taj Mahal website: static index.html plus Vercel Functions for the contact form and the /team leads portal",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0"
+  }
+}
